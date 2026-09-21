@@ -120,9 +120,24 @@ button,a{font:inherit}
   display:none;
   min-height:100vh;
   padding:34px 18px;
+  position:relative;
+  overflow:hidden;
   background:
-    radial-gradient(circle at 15% 10%,rgba(255,255,255,.55),transparent 20%),
-    linear-gradient(135deg,#eee7d6,#faf7ee 48%,#eee7d6);
+    radial-gradient(circle at 50% 45%,rgba(183,155,95,.18),transparent 18%),
+    radial-gradient(circle at 8% 12%,rgba(255,255,255,.055),transparent 22%),
+    radial-gradient(circle at 92% 88%,rgba(216,194,138,.08),transparent 24%),
+    linear-gradient(135deg,#071d19 0%,#0d3028 42%,#09231f 72%,#061915 100%);
+}
+.invitation:before{
+  content:"";position:absolute;inset:18px;
+  border:1px solid rgba(183,155,95,.24);border-radius:8px;pointer-events:none;
+}
+.invitation:after{
+  content:"";position:absolute;width:76vw;height:76vw;max-width:900px;max-height:900px;
+  border:1px solid rgba(216,194,138,.11);border-radius:50%;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 0 70px rgba(216,194,138,.025),0 0 0 140px rgba(216,194,138,.018);
+  pointer-events:none;
 }
 .invitation.show{display:block;animation:reveal .8s ease both}
 @keyframes reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
@@ -137,7 +152,7 @@ button,a{font:inherit}
     radial-gradient(circle at 50% 35%,rgba(255,255,255,.55),transparent 36%),
     var(--cream);
   border:2px solid var(--gold);
-  box-shadow:0 22px 70px rgba(29,43,35,.16);
+  box-shadow:0 28px 90px rgba(0,0,0,.38),0 0 0 1px rgba(216,194,138,.12);
   text-align:center;
 }
 .card:before{
@@ -277,3 +292,12 @@ button,a{font:inherit}
   .detail strong{font-size:19px}
   .card:before{inset:9px}
 }
+
+.countdown{width:min(560px,100%);margin:4px auto 0;padding:18px 14px 16px;border-top:1px solid rgba(183,155,95,.5);border-bottom:1px solid rgba(183,155,95,.5);background:rgba(183,155,95,.055)}
+.countdown-title{margin:0 0 13px;color:#8b7747;font-size:10px;letter-spacing:3px;font-weight:600}
+.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.countdown-grid div{position:relative;display:grid;gap:4px}
+.countdown-grid div+div:before{content:"";position:absolute;left:-5px;top:12%;height:76%;width:1px;background:rgba(183,155,95,.28)}
+.countdown-grid strong{font-family:"Playfair Display",serif;color:var(--forest);font-size:28px;font-weight:500;line-height:1}
+.countdown-grid span{color:#806e43;font-size:9px;letter-spacing:1.4px;text-transform:uppercase}
+@media (max-width:640px){.countdown{padding:15px 7px}.countdown-grid strong{font-size:23px}.countdown-grid span{font-size:8px;letter-spacing:1px}}
