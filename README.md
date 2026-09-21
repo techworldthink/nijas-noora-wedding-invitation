@@ -31,3 +31,12 @@ The Open Graph image uses the full public URL:
 https://techworldthink.github.io/nijas-noora-wedding-invitation/preview.jpg?v=1
 
 This is intentional so WhatsApp/Facebook/Twitter can fetch the preview image.
+
+## Music
+Place `audio.mp3` in the same GitHub folder as `index.html`. The song starts when the visitor taps the opening seal and loops during the invitation.
+
+## Paths
+`index.html` uses relative paths for `style.css`, `script.js`, and `audio.mp3`.
+
+## Main-page visual
+The second page uses a forest-green glassmorphism background with animated floating orbs, leaf-like outlines, and subtle gold particles.
