@@ -348,3 +348,70 @@ button,a{font:inherit}
 @media (prefers-reduced-motion:reduce){
   .invitation .glass-orb,.invitation .glass-leaf,.invitation .glass-spark{animation:none}
 }
+
+
+/* ================================
+   VENUE BUTTON - MOBILE FIX
+================================ */
+
+.location-btn,
+a.location-btn {
+  position: relative !important;
+  z-index: 9999 !important;
+
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+  padding: 11px 24px;
+
+  color: #183f35 !important;
+  background: rgba(255, 255, 255, 0.45) !important;
+
+  border: 1px solid #b79b5f !important;
+  border-radius: 30px;
+
+  text-decoration: none !important;
+
+  pointer-events: auto !important;
+  touch-action: manipulation;
+
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.location-btn:hover,
+.location-btn:focus,
+.location-btn:active {
+  color: #183f35 !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  border-color: #b79b5f !important;
+}
+
+/* Make sure decorative layers cannot cover the button */
+.location-btn::before,
+.location-btn::after {
+  pointer-events: none !important;
+}
+
+@media (max-width: 640px) {
+  .location-btn,
+  a.location-btn {
+    position: relative !important;
+    z-index: 99999 !important;
+
+    min-width: 150px;
+    min-height: 48px;
+
+    padding: 13px 26px;
+
+    font-size: 15px;
+    line-height: 1;
+
+    color: #183f35 !important;
+    background: rgba(255, 255, 255, 0.65) !important;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+}
